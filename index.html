@@ -126,6 +126,14 @@
   footer{max-width:100%;margin:0;padding:2rem 2.5rem;display:flex;justify-content:center;gap:3rem;font-size:0.82rem;color:rgba(255,255,255,0.7);background:#0a3d62;}
 
   @media(max-width:768px){
+    .hero-banner{height:auto;min-height:unset;display:flex;flex-direction:column;}
+    .hero-banner video{position:relative;top:unset;left:unset;width:100%;height:220px;object-fit:cover;}
+    .hero-overlay{position:relative;background:linear-gradient(135deg,#0a3d62 0%,#1a6ea8 100%);padding:1.75rem 1.25rem;}
+    .hero-text h1{font-size:1.8rem;margin-bottom:0.5rem;}
+    .hero-text .eyebrow{font-size:0.72rem;}
+    .hero-text p{font-size:0.9rem;line-height:1.6;margin-bottom:1.25rem;}
+    .hero-ctas{flex-direction:column;gap:0.6rem;}
+    .btn-primary,.btn-light{text-align:center;padding:0.7rem 1.25rem;font-size:0.85rem;}
     nav{padding:0 1rem;height:52px;}
     .nav-links{display:none;}
     .nav-name{font-size:1rem;}
@@ -179,19 +187,24 @@
     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
-<div id="mobile-menu" style="display:none;position:fixed;top:52px;left:0;right:0;background:#0a3d62;z-index:99;padding:1rem 1.5rem;border-bottom:1px solid #1a6ea8;">
-  <a href="#about" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">About</a>
-  <a href="#research" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Research</a>
-  <a href="#publications" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Publications</a>
-  <a href="#teaching" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Teaching</a>
-  <a href="#cv" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">CV</a>
-  <a href="#outreach" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Outreach</a>
-  <a href="#contact" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;font-size:0.95rem;">Contact</a>
+<div id="mobile-menu" style="position:fixed;top:52px;left:0;right:0;background:#0a3d62;z-index:999;padding:0.5rem 0;border-bottom:2px solid #48a9d4;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+  <a href="#about" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;border-bottom:1px solid rgba(255,255,255,0.1);">About</a>
+  <a href="#research" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;border-bottom:1px solid rgba(255,255,255,0.1);">Research</a>
+  <a href="#publications" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;border-bottom:1px solid rgba(255,255,255,0.1);">Publications</a>
+  <a href="#teaching" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;border-bottom:1px solid rgba(255,255,255,0.1);">Teaching</a>
+  <a href="#cv" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;border-bottom:1px solid rgba(255,255,255,0.1);">CV</a>
+  <a href="#outreach" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;border-bottom:1px solid rgba(255,255,255,0.1);">Outreach</a>
+  <a href="#contact" onclick="toggleMenu()" style="display:block;color:#fff;text-decoration:none;padding:0.8rem 1.5rem;font-size:0.95rem;">Contact</a>
 </div>
-<style>
-  #mobile-menu{display:none;}
-  #mobile-menu.open{display:block;}
-</style>
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobile-menu');
+  m.style.display = m.style.display === 'block' ? 'none' : 'block';
+}
+document.getElementById('menu-btn').onclick = toggleMenu;
+document.getElementById('mobile-menu').style.display = 'none';
+</script>
+
 
 <div class="hero-banner">
   <video autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#000;">
