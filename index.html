@@ -108,7 +108,7 @@
   .outreach-card ul{margin-top:0.5rem;padding-left:1rem;font-size:0.83rem;color:var(--ink-soft);line-height:1.75;}
 
   /* CONTACT */
-  .contact-layout{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;max-width:600px;}
+  .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
   .contact-info p{font-family:var(--serif);font-size:1.05rem;line-height:1.75;color:var(--ink-soft);margin-bottom:1.5rem;}
   .contact-detail{display:flex;flex-direction:column;gap:0.7rem;}
   .detail-row{display:flex;gap:1rem;align-items:flex-start;font-size:0.88rem;}
@@ -156,7 +156,7 @@
 </nav>
 
 <div class="hero-banner">
-  <video autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+  <video autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#000;">
     <source src="https://fscordo.github.io/Video%20Project%202.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay">
@@ -708,7 +708,13 @@
         <div class="detail-row"><span class="label">Scholar</span><a href="https://scholar.google.com/citations?user=lGLB49UAAAAJ&hl=es" target="_blank">Google Scholar → (h-index: 19)</a></div>
       </div>
     </div>
-    
+    <div class="contact-form">
+      <div class="form-field"><label for="name">Name</label><input type="text" id="name" placeholder="Your name"></div>
+      <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="your@email.edu"></div>
+      <div class="form-field"><label for="subject">Subject</label><input type="text" id="subject" placeholder="e.g. Collaboration inquiry"></div>
+      <div class="form-field"><label for="msg">Message</label><textarea id="msg" placeholder="Your message..."></textarea></div>
+      <a href="mailto:fscordo@unr.edu" class="btn-primary" style="text-align:center;">Send Message</a>
+    </div>
   </div>
 </section>
 
