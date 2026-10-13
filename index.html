@@ -129,12 +129,14 @@
     nav{padding:0 1rem;height:52px;}
     .nav-links{display:none;}
     .nav-name{font-size:1rem;}
-    .hero-banner{height:340px;}
-    .hero-overlay{padding:0 1.25rem;}
-    .hero-text h1{font-size:2rem;}
-    .hero-text p{font-size:1rem;}
-    .hero-ctas{flex-direction:column;gap:0.75rem;}
-    .btn-primary,.btn-light{text-align:center;padding:0.75rem 1.25rem;font-size:0.9rem;}
+    #menu-btn{display:block !important;}
+    .hero-banner{height:420px;}
+    .hero-overlay{padding:0 1.25rem;background:linear-gradient(to bottom,rgba(5,15,30,0.75) 0%,rgba(5,15,30,0.65) 100%);}
+    .hero-text .eyebrow{font-size:0.7rem;letter-spacing:0.08em;}
+    .hero-text h1{font-size:1.8rem;margin-bottom:0.5rem;}
+    .hero-text p{font-size:0.9rem;line-height:1.6;margin-bottom:1.25rem;}
+    .hero-ctas{flex-direction:column;gap:0.6rem;}
+    .btn-primary,.btn-light{text-align:center;padding:0.7rem 1.25rem;font-size:0.85rem;}
     section{padding:2rem 1.1rem;}
     .section-heading{font-size:1.5rem;}
     .about-layout,.pub-layout,.teaching-layout,.outreach-layout,.contact-layout,.cv-section{grid-template-columns:1fr;}
@@ -173,7 +175,23 @@
     <li><a href="#outreach">Outreach</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button id="menu-btn" onclick="document.getElementById('mobile-menu').classList.toggle('open')" style="display:none;background:none;border:none;cursor:pointer;padding:0.5rem;color:#fff;">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
+<div id="mobile-menu" style="display:none;position:fixed;top:52px;left:0;right:0;background:#0a3d62;z-index:99;padding:1rem 1.5rem;border-bottom:1px solid #1a6ea8;">
+  <a href="#about" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">About</a>
+  <a href="#research" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Research</a>
+  <a href="#publications" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Publications</a>
+  <a href="#teaching" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Teaching</a>
+  <a href="#cv" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">CV</a>
+  <a href="#outreach" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">Outreach</a>
+  <a href="#contact" onclick="document.getElementById('mobile-menu').classList.remove('open')" style="display:block;color:#fff;text-decoration:none;padding:0.75rem 0;font-size:0.95rem;">Contact</a>
+</div>
+<style>
+  #mobile-menu{display:none;}
+  #mobile-menu.open{display:block;}
+</style>
 
 <div class="hero-banner">
   <video autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#000;">
