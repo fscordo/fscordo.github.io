@@ -25,7 +25,16 @@
   .nav-links a{font-size:0.82rem;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;}
   .nav-links a:hover{color:#48a9d4;}
 
-  .hero-banner{position:relative;height:520px;overflow:hidden;background:#000;} .mobile-hero-text{display:none;} .mobile-hero-video{display:none;}
+  .hero-desktop{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:#0a3d62;}
+  .hero-desktop-text{display:flex;flex-direction:column;justify-content:center;padding:4rem 3rem;color:#fff;}
+  .hero-desktop-text .eyebrow{font-size:0.82rem;letter-spacing:0.12em;color:rgba(255,255,255,0.7);margin-bottom:0.75rem;}
+  .hero-desktop-text h1{font-family:'EB Garamond',Georgia,serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.15;margin-bottom:1rem;color:#fff;}
+  .hero-desktop-text p{font-family:'EB Garamond',Georgia,serif;font-size:1.1rem;line-height:1.7;color:rgba(255,255,255,0.85);margin-bottom:1.75rem;}
+  .hero-desktop-text .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
+  .hero-desktop-video{overflow:hidden;}
+  .hero-desktop-video video{width:100%;height:100%;object-fit:cover;display:block;}
+  .mobile-hero-text{display:none;}
+  .mobile-hero-video{display:none;}
   .hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center 75%;display:block;}
   .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,20,40,0.82) 0%,rgba(10,20,40,0.45) 60%,rgba(10,20,40,0.1) 100%);display:flex;align-items:center;padding:0 3.5rem;}
   .hero-text{max-width:620px;color:#fff;}
@@ -126,7 +135,7 @@
   footer{max-width:100%;margin:0;padding:2rem 2.5rem;display:flex;justify-content:center;gap:3rem;font-size:0.82rem;color:rgba(255,255,255,0.7);background:#0a3d62;}
 
   @media(max-width:768px){
-    .hero-banner{display:none;}
+    .hero-desktop{display:none;}
     .mobile-hero-text{display:block;padding:2rem 1.25rem 1rem;background:var(--white);}
     .mobile-hero-video{display:block;}
     .hero-text h1{font-size:1.8rem;margin-bottom:0.5rem;}
@@ -206,23 +215,23 @@ document.getElementById('mobile-menu').style.display = 'none';
 </script>
 
 
-<div class="hero-banner">
-  <video autoplay muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#000;">
-    <source src="https://fscordo.github.io/Video%20Project%202.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay">
-    <div class="hero-text">
-      <p class="eyebrow">Research Assistant Professor · Environmental Sciences · Aquatic Ecology</p>
-      <h1>Dr. Facundo Scordo</h1>
-      <p>I study how disturbances such as wildfire, drought, land-use change, and biological invasions reshape the ecological structure and function of freshwater ecosystems across the Northern and Southern Hemispheres.</p>
-      <div class="hero-ctas">
-        <a href="#research" class="btn-primary">View My Research</a>
-        <a href="#contact" class="btn-light">Get in Touch</a>
-      </div>
+<div class="hero-desktop">
+  <div class="hero-desktop-text">
+    <p class="eyebrow">Research Assistant Professor · Environmental Sciences · Aquatic Ecology</p>
+    <h1>Dr. Facundo Scordo</h1>
+    <p>I study how disturbances such as wildfire, drought, land-use change, and biological invasions reshape the ecological structure and function of freshwater ecosystems across the Northern and Southern Hemispheres.</p>
+    <div class="hero-ctas">
+      <a href="#research" class="btn-primary">View My Research</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
   </div>
+  <div class="hero-desktop-video">
+    <video autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+      <source src="https://fscordo.github.io/Video%20Project%202.mp4" type="video/mp4">
+    </video>
+  </div>
 </div>
-<!-- MOBILE HERO: shown only on phones -->
+<!-- MOBILE HERO -->
 <div class="mobile-hero-text">
   <p class="eyebrow" style="font-size:0.72rem;letter-spacing:0.1em;color:#48a9d4;text-transform:uppercase;margin-bottom:0.5rem;">Research Assistant Professor · Environmental Sciences · Aquatic Ecology</p>
   <h1 style="font-family:'EB Garamond',Georgia,serif;font-size:2rem;font-weight:400;margin-bottom:0.75rem;color:#0a3d62;">Dr. Facundo Scordo</h1>
